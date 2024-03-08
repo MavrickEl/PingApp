@@ -1,0 +1,15 @@
+spring:
+  liquibase:
+    enabled: true
+  datasource:
+    password: 7777
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/PingApp
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+springdoc:
+  swagger-ui:
+    path: /swagger
+    tryItOutEnabled: true

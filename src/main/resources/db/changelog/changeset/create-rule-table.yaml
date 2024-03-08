@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-rule
+      author: Pasha
+      changes:
+        - createTable:
+            tableName: rule
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: url
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: interval_second
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: expected_status_code
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: active
+                  type: BOOLEAN
+                  constraints:
+                    nullable: false
