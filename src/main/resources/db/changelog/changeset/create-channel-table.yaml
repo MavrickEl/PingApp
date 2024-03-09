@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-channel
+      author: Pasha
+      changes:
+        - createTable:
+            tableName: channel
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: token
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: chat_id
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false

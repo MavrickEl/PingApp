@@ -27,10 +27,14 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/").permitAll()
                         .requestMatchers("/login").permitAll()
-                        .requestMatchers(GET, "/api/rules").hasAnyRole("USER", "ADMIN")
-                        .requestMatchers(POST, "/api/rules").hasRole("ADMIN")
-                        .requestMatchers(DELETE, "/api/rules/**").hasRole("ADMIN")
-                        .requestMatchers(PATCH, "/api/rules/**").hasRole("ADMIN")
+                        .requestMatchers(GET, "/api/rule").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers(POST, "/api/rule").hasRole("ADMIN")
+                        .requestMatchers(DELETE, "/api/rule/**").hasRole("ADMIN")
+                        .requestMatchers(PATCH, "/api/rule/**").hasRole("ADMIN")
+                        .requestMatchers(GET, "/api/channel").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers(POST, "/api/channel").hasRole("ADMIN")
+                        .requestMatchers(DELETE, "/api/channel/**").hasRole("ADMIN")
+                        .requestMatchers(PATCH, "/api/channel/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
