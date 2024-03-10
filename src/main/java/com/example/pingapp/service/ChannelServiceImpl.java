@@ -6,7 +6,6 @@ import com.example.pingapp.exception.ChannelException;
 import com.example.pingapp.repo.ChannelRepo;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,17 +16,10 @@ import java.util.stream.Collectors;
 public class ChannelServiceImpl implements ChannelService {
     private final ChannelRepo channelRepo;
     private final ModelMapper mapper;
-    private final PingService ping;
 
-    public ChannelServiceImpl(ChannelRepo channelRepo, PingService ping) {
+    public ChannelServiceImpl(ChannelRepo channelRepo) {
         this.channelRepo = channelRepo;
         this.mapper = new ModelMapper();
-        this.ping = ping;
-    }
-
-    @Bean
-    public void loadChannels() {
-        ping.setChannels(channelRepo.findAll());
     }
 
     @Override

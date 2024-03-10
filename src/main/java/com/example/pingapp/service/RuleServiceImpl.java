@@ -17,20 +17,20 @@ public class RuleServiceImpl implements RuleService {
 
     private final RuleRepo ruleRepo;
     private final ModelMapper mapper;
+
     public RuleServiceImpl(RuleRepo ruleRepo) {
         this.ruleRepo = ruleRepo;
         this.mapper = new ModelMapper();
     }
 
 
-    public List<Rule> loadRules() {
-        return ruleRepo.findRulesByActiveIsTrue();
-    }
-
     @Override
     public RuleDTO save(RuleDTO ruleDTO) {
         Rule newRule = mapper.map(ruleDTO, Rule.class);
         log.info("Сохранение нового правила");
+        if (ruleDTO.getIntervalSecond() <= 0) {
+            throw new RuleException("Интервал правила должен быть больше 0");
+        }
         newRule = ruleRepo.save(newRule);
         return mapper.map(newRule, RuleDTO.class);
     }
@@ -54,6 +54,12 @@ public class RuleServiceImpl implements RuleService {
         log.info("Редактирование правила по идентификатору {}", id);
         rule.setActive(isActive);
         return mapper.map(ruleRepo.save(rule), RuleDTO.class);
+    }
+
+    @Override
+    public List<RuleDTO> getActiveRules() {
+        return ruleRepo.findRulesByActiveIsTrue().stream().map(rule -> mapper.map(rule, RuleDTO.class))
+                .collect(Collectors.toList());
     }
 
     @Override

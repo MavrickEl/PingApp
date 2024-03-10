@@ -13,6 +13,7 @@ public interface RuleService {
 
     RuleDTO edit(Long id, boolean isActive);
 
+    List<RuleDTO> getActiveRules();
 
     void delete(Long id);
 }

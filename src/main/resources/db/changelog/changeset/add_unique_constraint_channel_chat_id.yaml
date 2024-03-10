@@ -1,0 +1,8 @@
+databaseChangeLog:
+  -  changeSet:
+       id:  add_unique_constraint_channel_chat_id
+       author:  Pasha
+       changes:
+         -  addUniqueConstraint:
+              columnNames:  chat_id
+              tableName:  channel

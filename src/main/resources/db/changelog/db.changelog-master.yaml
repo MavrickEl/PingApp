@@ -3,3 +3,5 @@ databaseChangeLog:
       file: db/changelog/changeset/create-rule-table.yaml
   - include:
       file: db/changelog/changeset/create-channel-table.yaml
+  - include:
+      file: db/changelog/changeset/add_unique_constraint_channel_chat_id.yaml
