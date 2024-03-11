@@ -36,7 +36,7 @@ username: admin
 password: admin
 
 
-**USER** - доступны операции только операции с GET запросами
+**USER** - доступны только операции с GET запросами
 
 username: user
 
