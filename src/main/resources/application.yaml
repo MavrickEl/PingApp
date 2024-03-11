@@ -2,9 +2,9 @@ spring:
   liquibase:
     enabled: true
   datasource:
-    password: 7777
+    password: postgres
     username: postgres
-    url: jdbc:postgresql://localhost:5432/PingApp
+    url: jdbc:postgresql://localhost:5432/postgres
   jpa:
     open-in-view: false
     hibernate:
