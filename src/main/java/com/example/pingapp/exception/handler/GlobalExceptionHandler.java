@@ -1,4 +1,4 @@
-package com.example.pingapp.exception;
+package com.example.pingapp.exception.handler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

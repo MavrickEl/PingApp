@@ -1,9 +1,10 @@
-package com.example.pingapp.service;
+package com.example.pingapp.service.impl;
 
 import com.example.pingapp.DTO.RuleDTO;
 import com.example.pingapp.entity.Rule;
 import com.example.pingapp.exception.RuleException;
 import com.example.pingapp.repo.RuleRepo;
+import com.example.pingapp.service.RuleService;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;

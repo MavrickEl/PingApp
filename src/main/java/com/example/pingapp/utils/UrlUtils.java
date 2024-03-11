@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
  * идентификатора канала и текста сообщения
  */
 @NoArgsConstructor
-public class TGUrl {
+public class UrlUtils {
 
     /**
      * Создает URL-адрес для отправки сообщения в ТГ.

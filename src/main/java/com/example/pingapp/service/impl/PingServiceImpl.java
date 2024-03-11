@@ -1,7 +1,8 @@
-package com.example.pingapp.service;
+package com.example.pingapp.service.impl;
 
 import com.example.pingapp.DTO.ChannelDTO;
 import com.example.pingapp.DTO.RuleDTO;
+import com.example.pingapp.service.*;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;

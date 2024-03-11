@@ -1,9 +1,10 @@
-package com.example.pingapp.service;
+package com.example.pingapp.service.impl;
 
 import com.example.pingapp.DTO.ChannelDTO;
 import com.example.pingapp.entity.Channel;
 import com.example.pingapp.exception.ChannelException;
 import com.example.pingapp.repo.ChannelRepo;
+import com.example.pingapp.service.ChannelService;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;

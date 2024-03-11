@@ -1,5 +1,6 @@
-package com.example.pingapp.service;
+package com.example.pingapp.service.impl;
 
+import com.example.pingapp.service.PingExecutor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 

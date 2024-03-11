@@ -1,6 +1,7 @@
-package com.example.pingapp.service;
+package com.example.pingapp.service.impl;
 
-import com.example.pingapp.utils.TGUrl;
+import com.example.pingapp.service.NotificationService;
+import com.example.pingapp.utils.UrlUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -25,7 +26,7 @@ public class NotificationServiceImpl implements NotificationService {
      */
     @Override
     public void sendMessage(String token, String chatId, String message) {
-        String apiUrl = TGUrl.getUrl(token, chatId, message);
+        String apiUrl = UrlUtils.getUrl(token, chatId, message);
         try {
             template.getForEntity(apiUrl, String.class);
         } catch (Exception e) {
