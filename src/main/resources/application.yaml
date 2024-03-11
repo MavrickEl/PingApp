@@ -2,14 +2,19 @@ spring:
   liquibase:
     enabled: true
   datasource:
-    password: postgres
-    username: postgres
-    url: jdbc:postgresql://localhost:5432/postgres
+    password: ${PASSWORD:postgres}
+    username: ${USER:postgres}
+    url: jdbc:postgresql://${HOST:localhost}:${PORT:5432}/postgres
   jpa:
     open-in-view: false
     hibernate:
       ddl-auto: validate
+  docker:
+    compose:
+      enabled: true
 springdoc:
   swagger-ui:
     path: /swagger
     tryItOutEnabled: true
+
+

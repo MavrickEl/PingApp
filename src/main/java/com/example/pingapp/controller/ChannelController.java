@@ -53,6 +53,7 @@ public class ChannelController {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         log.info("Запрос удаления канала с идентификатором {}, адрес /api/channel/{}", id, id);
         channelService.delete(id);
+        pingService.deleteChannel(id);
         return ResponseEntity.ok().build();
     }
 }

@@ -10,4 +10,5 @@ public interface PingService {
 
     void addChannel(ChannelDTO channelDTO);
 
+    void deleteChannel(Long id);
 }

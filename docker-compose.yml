@@ -3,17 +3,24 @@ services:
     container_name: postgres_container
     image: postgres
     environment:
+      POSTGRES_DB: postgres
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: password
     ports:
-      - "5432:5432"
+      - 5432
     restart: unless-stopped
 
   app:
-    container_name: ping
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      HOST: postgres_container
+      USER: postgres
+      PASSWORD: password
+      PORT: 5432
     ports:
-      - '8080:8080'
+      - '8081:8080'
+    depends_on:
+      - postgres
 

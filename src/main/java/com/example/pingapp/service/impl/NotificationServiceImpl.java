@@ -49,12 +49,12 @@ public class NotificationServiceImpl implements NotificationService {
         if (actualStatus == expectedStatus) {
             notificationMessage = "Ожидаемый статус "
                     + expectedStatus + " снова получен после статуса "
-                    + actualStatus + ", url "
+                    + actualStatus + "\nURL: "
                     + url;
         } else {
             notificationMessage = "Получен статус "
-                    + actualStatus + ", при ожидаемом статусе "
-                    + expectedStatus + ", url "
+                    + actualStatus + " вместо ожидаемого статуса "
+                    + expectedStatus + "\nURL: "
                     + url;
         }
         return notificationMessage;

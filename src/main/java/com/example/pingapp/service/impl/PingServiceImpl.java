@@ -114,4 +114,9 @@ public class PingServiceImpl implements PingService {
     public void addChannel(ChannelDTO channelDTO) {
         channels.add(channelDTO);
     }
+
+    @Override
+    public void deleteChannel(Long id) {
+        channels.removeIf(channel -> channel.getId().equals(id));
+    }
 }
